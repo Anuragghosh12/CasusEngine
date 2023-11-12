@@ -158,12 +158,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Casus.cpp" />
+    <ClCompile Include="src\Characters\Warrior.cpp" />
     <ClCompile Include="src\Core\Engine.cpp" />
     <ClCompile Include="src\Graphics\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Characters\Character.h" />
+    <ClInclude Include="src\Characters\Warrior.h" />
     <ClInclude Include="src\Core\Engine.h" />
     <ClInclude Include="src\Graphics\TextureManager.h" />
+    <ClInclude Include="src\Object\GameObject.h" />
+    <ClInclude Include="src\Object\IObject.h" />
+    <ClInclude Include="src\Physics\Transform.h" />
+    <ClInclude Include="src\Physics\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

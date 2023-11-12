@@ -1,9 +1,11 @@
 ﻿#include "Engine.h"
 #include <iostream>
-
+#include "../Physics/Transform.h"
 #include "../../src/Graphics/TextureManager.h"
+#include "src/Characters/Warrior.h"
 
 Engine* Engine::s_Instance=nullptr;
+Warrior* Player=nullptr;
 
 Engine* Engine::GetInstance()
 {
@@ -31,7 +33,12 @@ bool Engine::Init()
         return false;
     }
 
-    TextureManager::GetInstance()->Load("moon", "assets/moon.png");
+    TextureManager::GetInstance()->Load("Player", "assets/Warrior/Left/Png/WarriorLeftAttack01.png");
+    Player=new  Warrior(new Properties("Player",100,200,288/6,48));
+    Transform tf;
+    tf.Log();
+
+    
     return m_IsRunning=true;
     
     
@@ -45,7 +52,7 @@ bool Engine::Clean()
 
 void Engine::Update()
 {
-    
+    Player->Update(0);
 }
 
 void Engine::Render()
@@ -53,7 +60,7 @@ void Engine::Render()
     SDL_SetRenderDrawColor(m_Renderer,124,218,254,255);
     SDL_RenderClear(m_Renderer);
 
-    TextureManager::GetInstance()->Draw("moon",100,100,300,300);
+    Player->Draw();
     SDL_RenderPresent(m_Renderer);
 }
 
