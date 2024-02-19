@@ -158,11 +158,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Casus.cpp" />
+    <ClCompile Include="src\Animation\Animation.cpp" />
     <ClCompile Include="src\Characters\Warrior.cpp" />
     <ClCompile Include="src\Core\Engine.cpp" />
     <ClCompile Include="src\Graphics\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Animation\Animation.h" />
     <ClInclude Include="src\Characters\Character.h" />
     <ClInclude Include="src\Characters\Warrior.h" />
     <ClInclude Include="src\Core\Engine.h" />
