@@ -20,6 +20,7 @@
 
 constexpr int BACKGROUNDS = 3;
 const float shipSize = 250.f;
+float TimeElapsed = 0.0f;
 
 //Textures for assets
 gl2d::Renderer2D renderer;
@@ -66,6 +67,7 @@ TiledRenderer tiledRenderer[BACKGROUNDS];
 void restartGame()
 {
 	data = {};
+	TimeElapsed = 0.f;
 	renderer.currentCamera.follow(data.playerPos, 550, 0, 0, renderer.windowW, renderer.windowH);
 }
 
@@ -379,12 +381,12 @@ bool gameLogic(float deltaTime)
 
 	renderer.flush();
 
-
+	TimeElapsed += deltaTime;
 	ImGui::Begin("debug");
 
 	ImGui::Text("Bullets count: %d", (int)data.bullets.size());
 	ImGui::Text("Enemy count: %d", (int)data.enemies.size());
-
+	ImGui::Text("Time Elapsed: %f", TimeElapsed);
 	if (ImGui::Button("Spawn Enemy"))
 	{
 		spawnEnemies();

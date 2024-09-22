@@ -1,16 +1,16 @@
 ## Casus Engine
- 2D Game Engine Using SDL2 And C++
+ 2D Game Engine Using GL2D And C++
 
 ## Note
-Some of the classes have broken linkages so currently it is not possible to use this repository on personal system
+~~Some of the classes have broken linkages so currently it is not possible to use this repository on personal system~~
+Fixed all broken linkages, remake most of the core functional logic so it should run fine now. The main file is now the gamelayer.cpp
  
 ## Instruction 
 1. Clone the git repository
-2. Install Microsoft Visual C++
-3. Install SDL2
-4. Build the project in Visual Studio
+2. Edit the CMakeCache.txt to include the file path as in current system
+3. Run the .exe file from the out\build\x64-Debug folder
 
 ## Changelogs
-1. Added texturing and layered display to be expanded upon
-2. Added animation framing to control the speed of the animation
-3. Implemented a class to extract sprites out of a sprite sheet by specifying the dimension of the sprites
+1. Changed the core library implementation from SDL2 to GL2D
+2. Created a fully playable prototype game, able to be run on Linux, MacOS as well as Windows
+3. Changed sprite extration class to be fullfilled by TextureAtlas
